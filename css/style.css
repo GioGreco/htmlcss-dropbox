@@ -1,3 +1,4 @@
+/* UTILITY */
 *{
     margin: 0;
     padding: 0;
@@ -6,4 +7,44 @@
 
 .debug{
     border: 1px solid red;
+    min-height: 100px;
+}
+
+:root{
+    --white: #ffffff;
+    --pastelblue-hero-square: #B4D0E7;
+    --black-footer: #000000;
+    --blue-buttons-ticks: #0061FF; /*fare i bottoni con display: block;*/
+    --green-square: #82A97C;
+    --amaranth-square: #4E0622;
+    --lightblue-square: #0076A5;
+    --crimson-square: #CC1616;
+    --red-square: #D5001F;
+    --darkblue-square: #0D2481;
+    --yellow-square: #FFD830;
+    --darkred-text: #61082B;
+}
+
+/* GENERAL */
+body{
+    background-color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fixed{
+    position: fixed;
+}
+
+.flex{
+    display: flex;
+}
+
+.container-big{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-small{
+    max-width: 1000px;
+    margin: 0px auto;
 }
