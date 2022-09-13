@@ -27,9 +27,14 @@
     --darkred-text: #61082B;
     --cards-border: #DBDBDD;
     --blue-link: #3247F1;
+    --lightblue-layover: #b4d0e75c;
 }
 
 /* GENERAL */
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
@@ -155,12 +160,26 @@ header #hero img{
 /* MAIN STYLE */
 
 main{
-    margin-top: 150px;
+    margin-top: 80px;
+    padding-top: 80px;
+    color: var(--grey-text);
 }
 
 main h2{
     font-size: 40px;
     padding-bottom: 50px;
+    color: var(--black);
+}
+
+main h3{
+    font-size: 25px;
+    padding-bottom: 15px;
+    color: var(--black)
+}
+
+main a{
+    color: var(--blue-link);
+    text-decoration: underline;
 }
 
 main label{
@@ -193,7 +212,6 @@ main .offer{
 main .billing-cards .b-card .inner-bcard, main .billing-card-wide .wrapper, main .find-partner{
     width: 95%;
     margin: 30px auto;
-    color: var(--grey-text);
 }
 
 main .billing-cards .b-card .inner-bcard li{
@@ -221,7 +239,6 @@ main .billing-cards .b-card .bcard-top .price{
 main .billing-cards .b-card .bcard-top .price h3, main .billing-card-wide h3, main .find-partner h3{
     font-size: 25px;
     padding-bottom: 15px;
-    color: var(--black);
 }
 
 main .billing-cards .b-card p, main .billing-card-wide p{
@@ -258,11 +275,6 @@ main .billing-cards .b-card .inner-bcard .purchase > span > span{
     height: 100%;
     border-bottom: 1px solid var(--cards-border);
     padding-right: 5px;
-}
-
-main .billing-cards .b-card .inner-bcard .purchase span a{
-    color: var(--blue-link);
-    text-decoration: underline;
 }
 
 main .billing-cards .b-card .inner-bcard .bcard-bottom{
@@ -339,5 +351,50 @@ main .find-partner .info-partner .btn{
 
 main .find-partner .info-partner .btn:hover{
     width: 100%;
+}
+
+/* THIRD section */
+main .features-section{
+    margin-top: 150px;
+}
+
+main .features-section .features-row{
+    width: 100%;
+}
+
+main .features-section .features-row .features-card{
+    width: calc((100% - 60px) / 3);
+    padding: 50px 10px;
+    position: relative;
+}
+
+main .features-section .features-row .features-card .layover{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 20px;
+    transition: background-color .3s ease-out, width .3s ease-out, height .3s ease-out;
+}
+
+main .features-section .features-row .features-card:hover .layover{
+    background-color: var(--lightblue-layover);
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+main .features-section .features-row .features-card img{
+    width: 100%;
+}
+
+main .features-section .find-out-more{
+    width: 60%;
+    margin-top: 175px;
+}
+
+main .features-section .find-out-more h2{
+    padding-bottom: 70px;
 }
 /* FOOTER STYLE */
