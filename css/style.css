@@ -325,14 +325,16 @@ main .find-partner img{
 main .find-partner .info-partner{
     width: 30%;
     height: 50%;
+    margin-bottom: 130px;
 }
 
 main .find-partner .info-partner .btn{
     background-color: var(--white);
     border: 1px solid var(--grey-text);
     color: var(--grey-text);
-    width: 50%;
+    width: 50%; /*come mai la transizione non è fluida se non imposto prima una width al bottone? In altri casi funzionava anche senza*/
     transition: width 1s ease-in-out;
+    padding: 10px;
 }
 
 main .find-partner .info-partner .btn:hover{
