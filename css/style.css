@@ -85,6 +85,8 @@ a{
     padding: 5px 12px;
     display: block;
     width: max-content;
+    cursor: pointer;
+    text-align: center;
 }
 
 .btn:hover{
@@ -179,7 +181,7 @@ main .billing-cards .b-card{
     padding: 20px;
 }
 
-main .billing-cards .b-card .offer{
+main .offer{
     display: block;
     width: 100%;
     padding: 10px;
@@ -187,7 +189,7 @@ main .billing-cards .b-card .offer{
     border-bottom: 1px solid var(--cards-border);
 }
 
-main .billing-cards .b-card .inner-bcard{
+main .billing-cards .b-card .inner-bcard, main .billing-card-wide .wrapper{
     width: 95%;
     margin: 30px auto;
     color: var(--grey-text);
@@ -204,7 +206,7 @@ main .billing-cards .b-card .inner-bcard i{
 }
 
 main .billing-cards .b-card .bcard-top{
-    height: 500px;
+    min-height: 500px;
 }
 
 main .billing-cards .b-card .bcard-top i{
@@ -215,13 +217,13 @@ main .billing-cards .b-card .bcard-top .price{
     height: 90px;
 }
 
-main .billing-cards .b-card .bcard-top .price h3{
+main .billing-cards .b-card .bcard-top .price h3, main .billing-card-wide h3{
     font-size: 25px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     color: var(--black);
 }
 
-main .billing-cards .b-card p{
+main .billing-cards .b-card p, main .billing-card-wide p{
     color: var(--black);
     font-weight: bolder;
 }
@@ -278,7 +280,32 @@ main .billing-cards .b-card .inner-bcard .bcard-bottom i{
     color: var(--blue-buttons-ticks);
 }
 
+main .billing-card-wide{
+    width: 100%;
+    border: 1px solid var(--cards-border);
+    margin-top: 50px;
+}
 
+main .billing-card-wide .wrapper{
+    height: 200px;
+}
 
+main .billing-card-wide .wrapper .inner-wide{
+    height: 100%;
+    align-items: flex-start;
+}
 
+main .billing-card-wide .wrapper .wide-left{
+    width: 65%;
+    height: 100%;
+}
+
+main .billing-card-wide .wrapper .wide-right{
+    width: 30%;
+}
+
+main .billing-card-wide .wrapper .wide-right .btn{
+    width: 100%;
+    padding: 15px;
+}
 /* FOOTER STYLE */
