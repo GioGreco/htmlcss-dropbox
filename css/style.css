@@ -24,10 +24,12 @@
     --red-square: #D5001F;
     --darkblue-square: #0D2481;
     --yellow-square: #FFD830;
+    --grey-big-square: #F5F5F5;
     --darkred-text: #61082B;
     --cards-border: #DBDBDD;
     --blue-link: #3247F1;
     --lightblue-layover: #b4d0e75c;
+    --border-hover: rgba(255, 255, 255, 0.5);
 }
 
 /* GENERAL */
@@ -396,5 +398,161 @@ main .features-section .find-out-more{
 
 main .features-section .find-out-more h2{
     padding-bottom: 70px;
+}
+
+/* FOURTH section */
+main #affiliations{
+    margin-top: 150px;
+}
+
+main #affiliations .partners{
+    width: calc(100vw / 3);
+    height: calc(100vw / 3);
+}
+
+main #affiliations .partners .partner{
+    width: calc(100vw / 6);
+    height: calc(100vw / 6);
+    position: relative;
+}
+
+main #affiliations .partners .partner svg{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main #affiliations .partners .partner svg path{
+    fill: var(--white);
+}
+
+main #affiliations .partners .partner.five svg path:nth-of-type(1){ /*Tra i path della quinta svg (world bycycle...) c'è anche una sezione che non voglio colorare di bianco ma lasciare che si confonda con lo sfondo*/
+    fill: var(--red-square);
+}
+
+main #affiliations .partners .partner.one{
+    background-color: var(--green-square);
+}
+
+main #affiliations .partners .partner.two{
+    background-color: var(--amaranth-square);
+}
+
+main #affiliations .partners .partner.three{
+    background-color: var(--lightblue-square);
+}
+
+main #affiliations .partners .partner.four{
+    background-color: var(--crimson-square);
+}
+
+main #affiliations .partners .partner.five{
+    background-color: var(--red-square);
+}
+
+main #affiliations .partners .partner.six{
+    background-color: var(--pastelblue-hero-square);
+}
+
+main #affiliations .partners .partner.seven{
+    background-color: var(--darkblue-square);
+}
+
+main #affiliations .partners .partner.eight{
+    background-color: var(--yellow-square);
+}
+
+/* Stile per le animazioni di comparsa delle descrizioni dei partner. Classi ancora da sistemare per rendere i percorsi più chiari. */
+
+.partners{
+    position: relative;
+}
+
+.partners.descriptions p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.partners .description-left{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    opacity: 0%;
+    transition: opacity 1s ease-in-out;
+    background-color: var(--grey-big-square);
+    overflow-y: scroll;
+    z-index: 100;
+}
+
+.partners .description-right{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 100%;
+    opacity: 0%;
+    transition: opacity 1s ease-in-out;
+    background-color: var(--grey-big-square);
+    overflow-y: scroll;
+    z-index: 100;
+}
+
+.description-left .inner-description, .description-right .inner-description{
+    padding: 40px;
+    justify-content: flex-start;
+}
+
+.description-left img, .description-right img{
+    width: 50%;
+    padding-bottom: 40px;
+}
+
+.description-left hr, .description-right hr{
+    width: 20%;
+}
+
+.description-left span:first-of-type, .description-right span:first-of-type{
+    padding: 50px 0;
+}
+
+.partner:hover{
+    border: 15px solid var(--border-hover);
+}
+
+.partner.one:hover ~ .description-left.one{
+    opacity: 100%;
+}
+
+.partner.two:hover ~ .description-left.two{
+    opacity: 100%;
+}
+
+.partner.three:hover ~ .description-left.three{
+    opacity: 100%;
+}
+
+.partner.four:hover ~ .description-left.four{
+    opacity: 100%;
+}
+
+.partner.five:hover ~ .description-right.five{
+    opacity: 100%;
+}
+
+.partner.six:hover ~ .description-right.six{
+    opacity: 100%;
+}
+
+.partner.seven:hover ~ .description-right.seven{
+    opacity: 100%;
+}
+
+.partner.eight:hover ~ .description-right.eight{
+    opacity: 100%;
 }
 /* FOOTER STYLE */
