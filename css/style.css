@@ -173,7 +173,7 @@ main h2{
     color: var(--black);
 }
 
-main h3{
+main h3, footer h3{
     font-size: 25px;
     padding-bottom: 15px;
     color: var(--black)
@@ -602,7 +602,7 @@ main .faq .questions ul li span{
     width: 90%;
     text-align: justify;
     margin: 0 auto;
-    padding-top: 20px;
+    padding: 20px 0;
     display: none;
 }
 
@@ -615,3 +615,53 @@ main .faq .questions ul li:active .fa-angle-down{
     align-self: center;
 }
 /* FOOTER STYLE */
+
+footer{
+    min-height: 550px;
+    background-color: var(--black);
+}
+
+footer h3{
+    color: var(--white);
+    padding-bottom: 30px;
+}
+
+footer a{
+    color: var(--white);
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer .macro-areas{
+    padding: 100px 0;
+    width: 100%;
+}
+
+footer .macro-areas > li{
+    width: calc((100% - 100px) / 5);
+    padding: 0 10px;
+}
+
+footer .macro-areas .micro-areas li{
+    padding-bottom: 15px;
+}
+
+footer hr{
+    width: 10%;
+}
+
+footer #language-selector{
+    padding-top: 50px;
+}
+
+footer #language-selector .fa-earth-americas{
+    color: var(--white);
+}
+
+footer #language-selector select{
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+}
