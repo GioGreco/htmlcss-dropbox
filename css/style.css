@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-.debug{
-    border: 1px solid red;
-    min-height: 100px;
-}
-
 :root{
     --white: #ffffff;
     --pastelblue-hero-square: #B4D0E7;
@@ -30,6 +25,9 @@
     --blue-link: #3247F1;
     --lightblue-layover: #b4d0e75c;
     --border-hover: rgba(255, 255, 255, 0.5);
+    --beige-hover-nav: #f2eee8;
+    --viewport-layover: rgba(0, 0, 0, 0.3);
+    --dropdown-text-hover: #d6d3ce;
 }
 
 /* GENERAL */
@@ -111,19 +109,103 @@ header nav{
     background-color: var(--white);
 }
 
-header nav ul{
-    width: 500px;
+header nav > ul{
+    width: 550px;
     padding: 0 15px;
+    height: 100%;
+}
+
+header nav > ul > li{
+    padding: 0 15px;
+    position: relative;
+    height: 100%;
 }
 
 header nav ul a{
     color: var(--grey-text);
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
-header nav ul a:hover{
-    text-decoration: underline;
+
+/* navbar dropdown menus style section */
+header nav .dropdown{
+    position: absolute;
+    top: 100%;
+    background-color: var(--beige-hover-nav);
+    z-index: 500;
+    visibility: hidden;
 }
 
+header nav .dropdown.end{ /*Serve a far iniziare il dropdown menu dal margine destro dei bottoni della parte dx della navbar*/
+    right: 1em;
+}
+
+header nav > ul > li:hover .dropdown{
+    visibility: visible;
+}
+
+header nav .dropdown.start{
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    box-shadow: 0 15px 0 15px var(--beige-hover-nav);
+    padding-top: 15px;
+}
+
+header nav .dropdown.end{
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    box-shadow: 0 15px 0 15px var(--beige-hover-nav);
+    padding-top: 15px;
+}
+
+header nav .dropdown.start div, header nav .dropdown.end div{
+    width: max-content;
+    padding: 15px;
+}
+
+header nav .dropdown.start div ul li, header nav .dropdown.end div ul li{
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+header nav .dropdown.start div ul li:hover, header nav .dropdown.end div ul li:hover{
+    cursor: pointer;
+    background-color: var(--dropdown-text-hover);
+}
+
+header nav .start li:not(:first-of-type):hover{
+    background-color: var(--beige-hover-nav);
+}
+
+header nav .end li:not(:last-of-type):hover{
+    background-color: var(--beige-hover-nav);
+}
+
+header nav .viewport-layover{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: var(--viewport-layover);
+    display: none;
+    z-index: 250;
+}
+
+header nav .start li:not(:first-of-type):hover ~ .viewport-layover{
+    display: inline-block;
+}
+
+header nav .end li:not(:last-of-type):hover ~ .viewport-layover{
+    display: inline-block
+}
+
+/* hero style */
 header #hero{
         width: 100%;
         background-color: var(--pastelblue-hero-square);
@@ -184,7 +266,7 @@ main a{
     text-decoration: underline;
 }
 
-main p{
+header p, main p{
     color: var(--black);
     font-weight: bolder;
 }
@@ -347,7 +429,7 @@ main .find-partner .info-partner .btn{
     background-color: var(--white);
     border: 1px solid var(--grey-text);
     color: var(--grey-text);
-    width: 50%; /*come mai la transizione non è fluida se non imposto prima una width al bottone? In altri casi funzionava anche senza*/
+    width: 50%;
     transition: width 1s ease-in-out;
     padding: 10px;
 }
@@ -468,93 +550,93 @@ main #affiliations .partners .partner.eight{
 
 /* Stile per le animazioni di comparsa delle descrizioni dei partner. Classi ancora da sistemare per rendere i percorsi più chiari. */
 
-.partners{
+main #affiliations .partners{
     position: relative;
 }
 
-.partners.descriptions p{
+main #affiliations .partners.descriptions p{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+    font-size: 1vw;
 }
 
-.partners .description-left{
+.partners.descriptions{
+    overflow: hidden;
+}
+
+main #affiliations .partners .description-left, main #affiliations .partners .description-right{
     position: absolute;
     width: 100%;
     height: 100%;
+    opacity: 0%;
+    transition: opacity 1s ease-in-out;
+    background-color: var(--grey-big-square);
+    overflow-y: scroll;
+    z-index: 100;
+}
+
+main #affiliations .partners .description-left{
     left: 100%;
-    opacity: 0%;
-    transition: opacity 1s ease-in-out;
-    background-color: var(--grey-big-square);
-    overflow-y: scroll;
-    z-index: 100;
 }
 
-.partners .description-right{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+main #affiliations .partners .description-right{
     right: 100%;
-    opacity: 0%;
-    transition: opacity 1s ease-in-out;
-    background-color: var(--grey-big-square);
-    overflow-y: scroll;
-    z-index: 100;
 }
 
-.description-left .inner-description, .description-right .inner-description{
+main #affiliations .description-left .inner-description, main #affiliations .description-right .inner-description{
     padding: 40px;
     justify-content: flex-start;
 }
 
-.description-left img, .description-right img{
+main #affiliations .description-left img, main #affiliations .description-right img{
     width: 50%;
     padding-bottom: 40px;
 }
 
-.description-left hr, .description-right hr{
+main #affiliations .description-left hr, main #affiliations .description-right hr{
     width: 20%;
 }
 
-.description-left span:first-of-type, .description-right span:first-of-type{
+main #affiliations .description-left span:first-of-type, main #affiliations .description-right span:first-of-type{
     padding: 50px 0;
 }
 
-.partner:hover{
+main #affiliations .partners .partner:hover{
     border: 15px solid var(--border-hover);
 }
 
-.partner.one:hover ~ .description-left.one{
+main #affiliations .partners .partner.one:hover ~ .description-left.one{
     opacity: 100%;
 }
 
-.partner.two:hover ~ .description-left.two{
+main #affiliations .partners .partner.two:hover ~ .description-left.two{
     opacity: 100%;
 }
 
-.partner.three:hover ~ .description-left.three{
+main #affiliations .partners .partner.three:hover ~ .description-left.three{
     opacity: 100%;
 }
 
-.partner.four:hover ~ .description-left.four{
+main #affiliations .partners .partner.four:hover ~ .description-left.four{
     opacity: 100%;
 }
 
-.partner.five:hover ~ .description-right.five{
+main #affiliations .partners .partner.five:hover ~ .description-right.five{
     opacity: 100%;
 }
 
-.partner.six:hover ~ .description-right.six{
+main #affiliations .partners .partner.six:hover ~ .description-right.six{
     opacity: 100%;
 }
 
-.partner.seven:hover ~ .description-right.seven{
+main #affiliations .partners .partner.seven:hover ~ .description-right.seven{
     opacity: 100%;
 }
 
-.partner.eight:hover ~ .description-right.eight{
+main #affiliations .partners .partner.eight:hover ~ .description-right.eight{
     opacity: 100%;
 }
 
@@ -596,6 +678,7 @@ main .faq .questions ul li{
     border-top: 1px solid var(--grey-text);
     border-bottom: 1px solid var(--grey-text);
     min-height: 100px;
+    cursor: pointer;
 }
 
 main .faq .questions ul li span{
