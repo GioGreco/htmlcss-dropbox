@@ -184,6 +184,11 @@ main a{
     text-decoration: underline;
 }
 
+main p{
+    color: var(--black);
+    font-weight: bolder;
+}
+
 main label{
     padding-right: 30px;
     color: var(--grey-text);
@@ -241,11 +246,6 @@ main .billing-cards .b-card .bcard-top .price{
 main .billing-cards .b-card .bcard-top .price h3, main .billing-card-wide h3, main .find-partner h3{
     font-size: 25px;
     padding-bottom: 15px;
-}
-
-main .billing-cards .b-card p, main .billing-card-wide p{
-    color: var(--black);
-    font-weight: bolder;
 }
 
 main .billing-cards .b-card .inner-bcard .bcard-specifics{
@@ -334,6 +334,7 @@ main .find-partner{
 
 main .find-partner img{
     height: 100%;
+    width: 60%;
 }
 
 main .find-partner .info-partner{
@@ -403,16 +404,17 @@ main .features-section .find-out-more h2{
 /* FOURTH section */
 main #affiliations{
     margin-top: 150px;
+    background-color: var(--grey-big-square);
 }
 
 main #affiliations .partners{
-    width: calc(100vw / 3);
-    height: calc(100vw / 3);
+    width: calc((100vw - 25px) / 3);
+    height: calc((100vw - 25px) / 3);
 }
 
 main #affiliations .partners .partner{
-    width: calc(100vw / 6);
-    height: calc(100vw / 6);
+    width: calc((100vw - 25px) / 6);
+    height: calc((100vw - 25px) / 6);
     position: relative;
 }
 
@@ -554,5 +556,62 @@ main #affiliations .partners .partner.eight{
 
 .partner.eight:hover ~ .description-right.eight{
     opacity: 100%;
+}
+
+/* FIFTH section */
+
+main .free-trial{
+    height: 360px;
+    background-color: var(--pastelblue-hero-square);
+}
+
+main .free-trial .container-small{
+    height: 100%;
+}
+
+main .free-trial h2{
+    width: 50%;
+    color: var(--darkred-text);
+    padding: 0;
+}
+
+main .free-trial .btn{
+    background-color: var(--white);
+    color: var(--black);
+    width: 35%;
+    padding: 15px 0;
+}
+
+/* SIXTH section */
+main .faq{
+    padding: 150px 0px;
+}
+
+main .faq .questions ul{
+    min-height: 315px;
+}
+
+main .faq .questions ul li{
+    width: 100%;
+    border-top: 1px solid var(--grey-text);
+    border-bottom: 1px solid var(--grey-text);
+    min-height: 100px;
+}
+
+main .faq .questions ul li span{
+    width: 90%;
+    text-align: justify;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: none;
+}
+
+main .faq .questions ul li:active span{
+    display: inline-block;
+}
+
+main .faq .questions ul li:active .fa-angle-down{
+    transform: rotate(180deg);
+    align-self: center;
 }
 /* FOOTER STYLE */
